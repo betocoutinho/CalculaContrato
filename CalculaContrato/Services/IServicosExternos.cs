@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CalculaContrato.Services
 {
-    interface ServiçosExternos
+    interface IServicosExternos
     {
         double Juros(double parcela);
         double taxas(double parcela);

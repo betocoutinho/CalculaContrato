@@ -7,11 +7,11 @@ namespace CalculaContrato.Entities
 {
     class ProcessaContrato
     {
-        private ServiçosExternos _serviço;
+        private IServicosExternos _servico;
 
-        public ProcessaContrato(ServiçosExternos serviço)
+        public ProcessaContrato(IServicosExternos servico)
         {
-            _serviço = serviço;
+            _servico = servico;
         }
 
         public void Processamento(Contrato contrato)
@@ -25,9 +25,9 @@ namespace CalculaContrato.Entities
             {
                 DateTime novaData = contrato.DataDoContrato.AddMonths(i);
 
-                double temp1 = _serviço.Juros(novaParcela);
+                double temp1 = _servico.Juros(novaParcela);
 
-                double temp2 = _serviço.taxas(temp1);
+                double temp2 = _servico.taxas(temp1);
                 novaParcela = temp2;
 
                 contrato.Parcelas.Add(new Parcela(novaData, temp2));

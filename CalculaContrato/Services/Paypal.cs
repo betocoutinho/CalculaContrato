@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CalculaContrato.Services
 {
-    class Paypal : ServiçosExternos
+    class Paypal : IServicosExternos
     {
         public double Juros(double parcela)
         {
